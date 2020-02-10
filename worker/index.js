@@ -17,9 +17,16 @@ const EXPORT_DIRECTORY = '../public/geojson/'
 
 const apiUrl = process.env.API_URL
 
-// ------------------------------------
-// fonctions
-// ------------------------------------
+const domainesCouleurs = {
+  m: '#498bd6',
+  h: '#856940',
+  s: '#8468b1',
+  g: '#d16c3e',
+  w: '#3ed1ac',
+  r: '#c2d13e',
+  c: '#3ea3d1',
+  f: '#a8782f'
+}
 
 const apiGet = async (url, { query, variables = {} }, prop) => {
   const res = await apiFetch(url, JSON.stringify({ query, variables }))
@@ -27,20 +34,47 @@ const apiGet = async (url, { query, variables = {} }, prop) => {
   return res && res.data && res.data[prop]
 }
 
-const geojsonsBuild = async (definitions, query, metas) =>
-  definitions.reduce(async (geojsons, variables) => {
-    // récupère les titres
-    let titres = await apiGet(apiUrl, { query, variables }, 'titres')
+const metasBuild = (definition, metas) =>
+  Object.keys(definition).reduce((metasObj, metaIdsName) => {
+    const metaName = `${metaIdsName.slice(0, -3)}s`
 
-    // Note: inconvénient, quand tous les titres valides d'un domaine
-    // et d'un type passent en échu (ex ARM), le flux disparaît
+    // TODO: refactoriser pour éviter les effets de bords dans le reduce
+    metasObj[metaName] = []
+
+    definition[metaIdsName].reduce((metasObj, metaId) => {
+      const meta = metas[metaName].find(m => m.id === metaId)
+
+      metasObj[metaName].push(meta)
+
+      return metasObj
+    }, metasObj)
+
+    return metasObj
+  }, {})
+
+const geojsonsBuild = async (definitions, query, metas) =>
+  definitions.reduce(async (geojsons, definition) => {
+    const titres = await apiGet(
+      apiUrl,
+      { query, variables: definition },
+      'titres'
+    )
+
     if (!titres || !titres.length) return geojsons
 
-    // si la réponse contient des titres
-    // formate les données et les ajoute
-    titres = geojsonFormat(titres, variables, metas)
+    const { domaines, types, statuts } = metasBuild(definition, metas)
 
-    return (await geojsons).concat(titres)
+    console.log(types)
+
+    const couleur = domainesCouleurs[definition.domaineIds[0]]
+
+    const geojson = geojsonFormat(titres, couleur, {
+      domaines,
+      types,
+      statuts
+    })
+
+    return (await geojsons).concat(geojson)
   }, Promise.resolve([]))
 
 const filesCreate = async geojsons =>
@@ -76,6 +110,7 @@ const run = async () => {
     const domainesQuery = await fileImport(
       join(__dirname, 'queries/domaines.gql')
     )
+    const typesQuery = await fileImport(join(__dirname, 'queries/types.gql'))
     const statutsQuery = await fileImport(
       join(__dirname, 'queries/statuts.gql')
     )
@@ -86,12 +121,12 @@ const run = async () => {
     // créé le dossier cible
     await directoryCreate(join(__dirname, EXPORT_DIRECTORY))
 
-    // récupère les domaines
+    // récupère les domaines, types et statuts
     const domaines = await apiGet(apiUrl, { query: domainesQuery }, 'domaines')
-    // récupère les statuts
+    const types = await apiGet(apiUrl, { query: typesQuery }, 'types')
     const statuts = await apiGet(apiUrl, { query: statutsQuery }, 'statuts')
 
-    const metas = { domaines, statuts }
+    const metas = { types, domaines, statuts }
 
     // parcourt les définitions et construit un tableau de geojsons
     // dont l'entrée properties contient, entre autre le nom du fichier
