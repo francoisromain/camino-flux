@@ -2,5 +2,12 @@ query Domaines {
   domaines {
     id
     nom
+    titresTypes {
+      id
+      type {
+        id
+        nom
+      }
+    }
   }
 }
