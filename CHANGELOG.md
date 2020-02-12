@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.10.10](https://github.com/MTES-MCT/camino-flux/compare/v0.10.9...v0.10.10) (2020-02-12)
+
+
+### Features
+
+* ajoute la publicité des AEX échues ([#5](https://github.com/MTES-MCT/camino-flux/issues/5)) ([a87d415](https://github.com/MTES-MCT/camino-flux/commit/a87d4154c2f8c83f045699a594801166a1f47489))
+
+
+### Bug Fixes
+
+* converti les types de titres ([#6](https://github.com/MTES-MCT/camino-flux/issues/6)) ([daa46ca](https://github.com/MTES-MCT/camino-flux/commit/daa46ca09910069018c0b660449ed784f3eb67aa))
+
 ### [0.10.9](https://github.com/MTES-MCT/camino-flux/compare/v0.10.8...v0.10.9) (2020-01-23)
 
 
