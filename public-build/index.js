@@ -55,11 +55,19 @@ const geojsonsBuild = async (definitions, query, metas) =>
 
     const couleur = domainesCouleurs[definition.domainesIds[0]]
 
-    const geojson = geojsonFormat(titres, couleur, {
+    const fichier = fileNameFormat({
       domaines,
       types,
       statuts
     })
+
+    const properties = {
+      fichier,
+      couleur,
+      ...metasFormat(metas)
+    }
+
+    const geojson = geojsonFormat(titres, properties)
 
     return (await geojsons).concat(geojson)
   }, Promise.resolve([]))
@@ -85,6 +93,24 @@ const infosFileCreate = async infos => {
 
   console.log(`${infos.length} fichiers générés`)
 }
+
+const fileNameFormat = ({ domaines, types, statuts }) => {
+  return `titres-${domaines.map(d => d.id).join('-')}-${types
+    .map(t => t.id)
+    .join('-')}-${statuts.map(s => s.id).join('-')}.geojson`
+}
+
+// pour chaque definition (domainesIds, typesIds, statutsIds)
+// retourne un tableau avec les noms correspondant aux ids
+// - domaines: []
+// - types: []
+// - statuts: []
+const metasFormat = metas =>
+  Object.keys(metas).reduce((metasObj, metaName) => {
+    metasObj[metaName] = metas[metaName].map(m => m.nom || m.type.nom)
+
+    return metasObj
+  }, {})
 
 // ------------------------------------
 // process

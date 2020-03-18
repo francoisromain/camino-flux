@@ -107,34 +107,10 @@ const titreFormat = ({
   }
 }
 
-const fileNameFormat = ({ domaines, types, statuts }) => {
-  return `titres-${domaines.map(d => d.id).join('-')}-${types
-    .map(t => t.id)
-    .join('-')}-${statuts.map(s => s.id).join('-')}.geojson`
-}
-
-// pour chaque definition (domainesIds, typesIds, statutsIds)
-// retourne un tableau avec les noms correspondant aux ids
-// - domaines: []
-// - types: []
-// - statuts: []
-const metasFormat = metas =>
-  Object.keys(metas).reduce((metasObj, metaName) => {
-    metasObj[`${metaName.slice(0, -1)}Ids`] = metas[metaName].map(
-      m => m.nom || m.type.nom
-    )
-
-    return metasObj
-  }, {})
-
 // pour une definition, retourne le contenu du geojson formaté
-const geojsonFormat = (titres, couleur, metas) => ({
+const geojsonFormat = (titres, properties) => ({
   type: 'FeatureCollection',
-  properties: {
-    fichier: fileNameFormat(metas),
-    couleur,
-    ...metasFormat(metas)
-  },
+  properties,
   features: titres.map(titreFormat)
 })
 
