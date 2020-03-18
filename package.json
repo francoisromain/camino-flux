@@ -9,7 +9,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "node --no-warnings ./static/index.js",
+    "build": "node --no-warnings ./public-build/index.js",
     "dev": "onchange '**/*.js' -i -k -- npm run build",
     "start": "npm run build & node ./index.js",
     "commit": "npx git-cz",
