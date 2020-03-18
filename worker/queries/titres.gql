@@ -1,14 +1,14 @@
 query Titres(
-  $typeIds: [ID!]
-  $domaineIds: [ID!]
-  $statutIds: [ID!]
-  $substances: [String!]
-  $noms: [String!]
+  $typesIds: [ID!]
+  $domainesIds: [ID!]
+  $statutsIds: [ID!]
+  $substances: String
+  $noms: String
 ) {
   titres(
-    typeIds: $typeIds
-    domaineIds: $domaineIds
-    statutIds: $statutIds
+    typesIds: $typesIds
+    domainesIds: $domainesIds
+    statutsIds: $statutsIds
     substances: $substances
     noms: $noms
   ) {
@@ -39,11 +39,7 @@ fragment titre on Titre {
   dateDebut
   dateFin
   dateDemande
-  volume
   surface
-  volumeUnite {
-    nom
-  }
   substances {
     ...substance
   }

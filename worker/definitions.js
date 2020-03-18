@@ -1,385 +1,385 @@
 const definitions = [
   // --------------------------------------
   {
-    domaineIds: ['c'],
-    typeIds: ['ap'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['c'],
+    typesIds: ['ap'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['c'],
-    typeIds: ['ar'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['c'],
+    typesIds: ['ar'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['c'],
-    typeIds: ['pc'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['c'],
+    typesIds: ['pc'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['c'],
-    typeIds: ['ap'],
-    statutIds: ['dmi']
+    domainesIds: ['c'],
+    typesIds: ['ap'],
+    statutsIds: ['dmi']
   },
   {
-    domaineIds: ['c'],
-    typeIds: ['ar'],
-    statutIds: ['dmi']
+    domainesIds: ['c'],
+    typesIds: ['ar'],
+    statutsIds: ['dmi']
   },
   {
-    domaineIds: ['c'],
-    typeIds: ['pc'],
-    statutIds: ['dmi']
+    domainesIds: ['c'],
+    typesIds: ['pc'],
+    statutsIds: ['dmi']
   },
   {
-    domaineIds: ['c'],
-    typeIds: ['ap'],
-    statutIds: ['ech']
+    domainesIds: ['c'],
+    typesIds: ['ap'],
+    statutsIds: ['ech']
   },
   {
-    domaineIds: ['c'],
-    typeIds: ['ar'],
-    statutIds: ['ech']
+    domainesIds: ['c'],
+    typesIds: ['ar'],
+    statutsIds: ['ech']
   },
   {
-    domaineIds: ['c'],
-    typeIds: ['pc'],
-    statutIds: ['ech']
-  },
-  // --------------------------------------
-  {
-    domaineIds: ['f'],
-    typeIds: ['cx'],
-    statutIds: ['mod', 'val']
-  },
-  {
-    domaineIds: ['f'],
-    typeIds: ['pr'],
-    statutIds: ['mod', 'val']
-  },
-  {
-    domaineIds: ['f'],
-    typeIds: ['cx'],
-    statutIds: ['dmi']
-  },
-  {
-    domaineIds: ['f'],
-    typeIds: ['pr'],
-    statutIds: ['dmi']
-  },
-  {
-    domaineIds: ['f'],
-    typeIds: ['cx'],
-    statutIds: ['ech']
-  },
-  {
-    domaineIds: ['f'],
-    typeIds: ['pr'],
-    statutIds: ['ech']
+    domainesIds: ['c'],
+    typesIds: ['pc'],
+    statutsIds: ['ech']
   },
   // --------------------------------------
   {
-    domaineIds: ['g'],
-    typeIds: ['ar'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['f'],
+    typesIds: ['cx'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['g'],
-    typeIds: ['cx'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['f'],
+    typesIds: ['pr'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['g'],
-    typeIds: ['pr'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['f'],
+    typesIds: ['cx'],
+    statutsIds: ['dmi']
   },
   {
-    domaineIds: ['g'],
-    typeIds: ['px'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['f'],
+    typesIds: ['pr'],
+    statutsIds: ['dmi']
   },
   {
-    domaineIds: ['g'],
-    typeIds: ['ar'],
-    statutIds: ['dmi']
+    domainesIds: ['f'],
+    typesIds: ['cx'],
+    statutsIds: ['ech']
   },
   {
-    domaineIds: ['g'],
-    typeIds: ['cx'],
-    statutIds: ['dmi']
-  },
-  {
-    domaineIds: ['g'],
-    typeIds: ['pr'],
-    statutIds: ['dmi']
-  },
-  {
-    domaineIds: ['g'],
-    typeIds: ['px'],
-    statutIds: ['dmi']
-  },
-  {
-    domaineIds: ['g'],
-    typeIds: ['ar'],
-    statutIds: ['ech']
-  },
-  {
-    domaineIds: ['g'],
-    typeIds: ['cx'],
-    statutIds: ['ech']
-  },
-  {
-    domaineIds: ['g'],
-    typeIds: ['pr'],
-    statutIds: ['ech']
-  },
-  {
-    domaineIds: ['g'],
-    typeIds: ['px'],
-    statutIds: ['ech']
+    domainesIds: ['f'],
+    typesIds: ['pr'],
+    statutsIds: ['ech']
   },
   // --------------------------------------
   {
-    domaineIds: ['h'],
-    typeIds: ['ap'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['g'],
+    typesIds: ['ar'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['h'],
-    typeIds: ['cx'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['g'],
+    typesIds: ['cx'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['h'],
-    typeIds: ['pr'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['g'],
+    typesIds: ['pr'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['h'],
-    typeIds: ['px'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['g'],
+    typesIds: ['px'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['h'],
-    typeIds: ['ap'],
-    statutIds: ['dmi']
+    domainesIds: ['g'],
+    typesIds: ['ar'],
+    statutsIds: ['dmi']
   },
   {
-    domaineIds: ['h'],
-    typeIds: ['cx'],
-    statutIds: ['dmi']
+    domainesIds: ['g'],
+    typesIds: ['cx'],
+    statutsIds: ['dmi']
   },
   {
-    domaineIds: ['h'],
-    typeIds: ['pr'],
-    statutIds: ['dmi']
+    domainesIds: ['g'],
+    typesIds: ['pr'],
+    statutsIds: ['dmi']
   },
   {
-    domaineIds: ['h'],
-    typeIds: ['px'],
-    statutIds: ['dmi']
+    domainesIds: ['g'],
+    typesIds: ['px'],
+    statutsIds: ['dmi']
   },
   {
-    domaineIds: ['h'],
-    typeIds: ['ap'],
-    statutIds: ['ech']
+    domainesIds: ['g'],
+    typesIds: ['ar'],
+    statutsIds: ['ech']
   },
   {
-    domaineIds: ['h'],
-    typeIds: ['cx'],
-    statutIds: ['ech']
+    domainesIds: ['g'],
+    typesIds: ['cx'],
+    statutsIds: ['ech']
   },
   {
-    domaineIds: ['h'],
-    typeIds: ['pr'],
-    statutIds: ['ech']
+    domainesIds: ['g'],
+    typesIds: ['pr'],
+    statutsIds: ['ech']
   },
   {
-    domaineIds: ['h'],
-    typeIds: ['px'],
-    statutIds: ['ech']
-  },
-  // --------------------------------------
-  {
-    domaineIds: ['m'],
-    typeIds: ['ap'],
-    statutIds: ['mod', 'val']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['ar'],
-    statutIds: ['val']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['ax'],
-    statutIds: ['mod', 'val']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['cx'],
-    statutIds: ['mod', 'val']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['pr'],
-    statutIds: ['mod', 'val']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['px'],
-    statutIds: ['mod', 'val']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['ap'],
-    statutIds: ['dmi']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['ax'],
-    statutIds: ['dmi']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['cx'],
-    statutIds: ['dmi']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['pr'],
-    statutIds: ['dmi']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['px'],
-    statutIds: ['dmi']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['ap'],
-    statutIds: ['ech']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['ar'],
-    statutIds: ['ech']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['ax'],
-    statutIds: ['ech']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['cx'],
-    statutIds: ['ech']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['pr'],
-    statutIds: ['ech']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['px'],
-    statutIds: ['ech']
-  },
-  {
-    domaineIds: ['m'],
-    typeIds: ['ar'],
-    statutIds: ['dmc']
+    domainesIds: ['g'],
+    typesIds: ['px'],
+    statutsIds: ['ech']
   },
   // --------------------------------------
   {
-    domaineIds: ['s'],
-    typeIds: ['cx'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['h'],
+    typesIds: ['ap'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['s'],
-    typeIds: ['pr'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['h'],
+    typesIds: ['cx'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['s'],
-    typeIds: ['cx'],
-    statutIds: ['dmi']
+    domainesIds: ['h'],
+    typesIds: ['pr'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['s'],
-    typeIds: ['pr'],
-    statutIds: ['dmi']
+    domainesIds: ['h'],
+    typesIds: ['px'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['s'],
-    typeIds: ['cx'],
-    statutIds: ['ech']
+    domainesIds: ['h'],
+    typesIds: ['ap'],
+    statutsIds: ['dmi']
   },
   {
-    domaineIds: ['s'],
-    typeIds: ['pr'],
-    statutIds: ['ech']
+    domainesIds: ['h'],
+    typesIds: ['cx'],
+    statutsIds: ['dmi']
+  },
+  {
+    domainesIds: ['h'],
+    typesIds: ['pr'],
+    statutsIds: ['dmi']
+  },
+  {
+    domainesIds: ['h'],
+    typesIds: ['px'],
+    statutsIds: ['dmi']
+  },
+  {
+    domainesIds: ['h'],
+    typesIds: ['ap'],
+    statutsIds: ['ech']
+  },
+  {
+    domainesIds: ['h'],
+    typesIds: ['cx'],
+    statutsIds: ['ech']
+  },
+  {
+    domainesIds: ['h'],
+    typesIds: ['pr'],
+    statutsIds: ['ech']
+  },
+  {
+    domainesIds: ['h'],
+    typesIds: ['px'],
+    statutsIds: ['ech']
   },
   // --------------------------------------
   {
-    domaineIds: ['w'],
-    typeIds: ['ap'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['m'],
+    typesIds: ['ap'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['w'],
-    typeIds: ['cx'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['m'],
+    typesIds: ['ar'],
+    statutsIds: ['val']
   },
   {
-    domaineIds: ['w'],
-    typeIds: ['pr'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['m'],
+    typesIds: ['ax'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['w'],
-    typeIds: ['ar'],
-    statutIds: ['mod', 'val']
+    domainesIds: ['m'],
+    typesIds: ['cx'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['w'],
-    typeIds: ['ap'],
-    statutIds: ['dmi']
+    domainesIds: ['m'],
+    typesIds: ['pr'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['w'],
-    typeIds: ['cx'],
-    statutIds: ['dmi']
+    domainesIds: ['m'],
+    typesIds: ['px'],
+    statutsIds: ['mod', 'val']
   },
   {
-    domaineIds: ['w'],
-    typeIds: ['pr'],
-    statutIds: ['dmi']
+    domainesIds: ['m'],
+    typesIds: ['ap'],
+    statutsIds: ['dmi']
   },
   {
-    domaineIds: ['w'],
-    typeIds: ['ar'],
-    statutIds: ['dmi']
+    domainesIds: ['m'],
+    typesIds: ['ax'],
+    statutsIds: ['dmi']
   },
   {
-    domaineIds: ['w'],
-    typeIds: ['ap'],
-    statutIds: ['ech']
+    domainesIds: ['m'],
+    typesIds: ['cx'],
+    statutsIds: ['dmi']
   },
   {
-    domaineIds: ['w'],
-    typeIds: ['cx'],
-    statutIds: ['ech']
+    domainesIds: ['m'],
+    typesIds: ['pr'],
+    statutsIds: ['dmi']
   },
   {
-    domaineIds: ['w'],
-    typeIds: ['pr'],
-    statutIds: ['ech']
+    domainesIds: ['m'],
+    typesIds: ['px'],
+    statutsIds: ['dmi']
   },
   {
-    domaineIds: ['w'],
-    typeIds: ['ar'],
-    statutIds: ['ech']
+    domainesIds: ['m'],
+    typesIds: ['ap'],
+    statutsIds: ['ech']
+  },
+  {
+    domainesIds: ['m'],
+    typesIds: ['ar'],
+    statutsIds: ['ech']
+  },
+  {
+    domainesIds: ['m'],
+    typesIds: ['ax'],
+    statutsIds: ['ech']
+  },
+  {
+    domainesIds: ['m'],
+    typesIds: ['cx'],
+    statutsIds: ['ech']
+  },
+  {
+    domainesIds: ['m'],
+    typesIds: ['pr'],
+    statutsIds: ['ech']
+  },
+  {
+    domainesIds: ['m'],
+    typesIds: ['px'],
+    statutsIds: ['ech']
+  },
+  {
+    domainesIds: ['m'],
+    typesIds: ['ar'],
+    statutsIds: ['dmc']
+  },
+  // --------------------------------------
+  {
+    domainesIds: ['s'],
+    typesIds: ['cx'],
+    statutsIds: ['mod', 'val']
+  },
+  {
+    domainesIds: ['s'],
+    typesIds: ['pr'],
+    statutsIds: ['mod', 'val']
+  },
+  {
+    domainesIds: ['s'],
+    typesIds: ['cx'],
+    statutsIds: ['dmi']
+  },
+  {
+    domainesIds: ['s'],
+    typesIds: ['pr'],
+    statutsIds: ['dmi']
+  },
+  {
+    domainesIds: ['s'],
+    typesIds: ['cx'],
+    statutsIds: ['ech']
+  },
+  {
+    domainesIds: ['s'],
+    typesIds: ['pr'],
+    statutsIds: ['ech']
+  },
+  // --------------------------------------
+  {
+    domainesIds: ['w'],
+    typesIds: ['ap'],
+    statutsIds: ['mod', 'val']
+  },
+  {
+    domainesIds: ['w'],
+    typesIds: ['cx'],
+    statutsIds: ['mod', 'val']
+  },
+  {
+    domainesIds: ['w'],
+    typesIds: ['pr'],
+    statutsIds: ['mod', 'val']
+  },
+  {
+    domainesIds: ['w'],
+    typesIds: ['ar'],
+    statutsIds: ['mod', 'val']
+  },
+  {
+    domainesIds: ['w'],
+    typesIds: ['ap'],
+    statutsIds: ['dmi']
+  },
+  {
+    domainesIds: ['w'],
+    typesIds: ['cx'],
+    statutsIds: ['dmi']
+  },
+  {
+    domainesIds: ['w'],
+    typesIds: ['pr'],
+    statutsIds: ['dmi']
+  },
+  {
+    domainesIds: ['w'],
+    typesIds: ['ar'],
+    statutsIds: ['dmi']
+  },
+  {
+    domainesIds: ['w'],
+    typesIds: ['ap'],
+    statutsIds: ['ech']
+  },
+  {
+    domainesIds: ['w'],
+    typesIds: ['cx'],
+    statutsIds: ['ech']
+  },
+  {
+    domainesIds: ['w'],
+    typesIds: ['pr'],
+    statutsIds: ['ech']
+  },
+  {
+    domainesIds: ['w'],
+    typesIds: ['ar'],
+    statutsIds: ['ech']
   }
 ]
 

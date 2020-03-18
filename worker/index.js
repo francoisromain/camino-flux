@@ -28,15 +28,15 @@ const domainesCouleurs = {
   f: '#a8782f'
 }
 
-const apiGet = async (url, { query, variables = {} }, prop) => {
-  const res = await apiFetch(url, JSON.stringify({ query, variables }))
+const apiGet = async ({ query, variables = {} }, prop) => {
+  const res = await apiFetch(apiUrl, JSON.stringify({ query, variables }))
 
   return res && res.data && res.data[prop]
 }
 
 const metasBuild = (definition, metas) =>
   Object.keys(definition).reduce((metasObj, metaIdsName) => {
-    const metaName = `${metaIdsName.slice(0, -3)}s`
+    const metaName = `${metaIdsName.slice(0, -3)}`
 
     // TODO: refactoriser pour éviter les effets de bords dans le reduce
     metasObj[metaName] = []
@@ -54,19 +54,13 @@ const metasBuild = (definition, metas) =>
 
 const geojsonsBuild = async (definitions, query, metas) =>
   definitions.reduce(async (geojsons, definition) => {
-    const titres = await apiGet(
-      apiUrl,
-      { query, variables: definition },
-      'titres'
-    )
+    const titres = await apiGet({ query, variables: definition }, 'titres')
 
     if (!titres || !titres.length) return geojsons
 
     const { domaines, types, statuts } = metasBuild(definition, metas)
 
-    console.log(types)
-
-    const couleur = domainesCouleurs[definition.domaineIds[0]]
+    const couleur = domainesCouleurs[definition.domainesIds[0]]
 
     const geojson = geojsonFormat(titres, couleur, {
       domaines,
@@ -122,9 +116,9 @@ const run = async () => {
     await directoryCreate(join(__dirname, EXPORT_DIRECTORY))
 
     // récupère les domaines, types et statuts
-    const domaines = await apiGet(apiUrl, { query: domainesQuery }, 'domaines')
-    const types = await apiGet(apiUrl, { query: typesQuery }, 'types')
-    const statuts = await apiGet(apiUrl, { query: statutsQuery }, 'statuts')
+    const domaines = await apiGet({ query: domainesQuery }, 'domaines')
+    const types = await apiGet({ query: typesQuery }, 'types')
+    const statuts = await apiGet({ query: statutsQuery }, 'statuts')
 
     const metas = { types, domaines, statuts }
 

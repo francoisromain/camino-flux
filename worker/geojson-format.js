@@ -9,8 +9,6 @@ const titreFormat = ({
   dateDebut,
   dateFin,
   dateDemande,
-  volume,
-  volumeUnite,
   surface,
   substances,
   titulaires,
@@ -60,7 +58,6 @@ const titreFormat = ({
       type: type.type.nom,
       domaine: domaine.nom,
       statut: statut.nom,
-      volume: volume && `${volume} ${volumeUnite.nom}`,
       surface: surface && `${surface} km²`,
       substances:
         substances && substances.length
@@ -116,7 +113,7 @@ const fileNameFormat = ({ domaines, types, statuts }) => {
     .join('-')}-${statuts.map(s => s.id).join('-')}.geojson`
 }
 
-// pour chaque definition (domaineIds, typeIds, statutIds)
+// pour chaque definition (domainesIds, typesIds, statutsIds)
 // retourne un tableau avec les noms correspondant aux ids
 // - domaines: []
 // - types: []
