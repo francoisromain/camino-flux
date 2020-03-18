@@ -6,16 +6,15 @@ require('dotenv').config()
 const { join } = require('path')
 var { job } = require('cron')
 
-const fileImport = require('./_utils/file-import')
+const apiGet = require('../api/index')
+const queries = require('../api/queries')
+const geojsonFormat = require('../utils/geojson-format')
+
 const fileCreate = require('./_utils/file-create')
 const directoryDelete = require('./_utils/directory-delete')
 const directoryCreate = require('./_utils/directory-create')
-const apiFetch = require('./_utils/api-fetch')
-const geojsonFormat = require('./geojson-format')
 const definitions = require('./definitions')
 const EXPORT_DIRECTORY = '../public/geojson/'
-
-const apiUrl = process.env.API_URL
 
 const domainesCouleurs = {
   m: '#498bd6',
@@ -26,12 +25,6 @@ const domainesCouleurs = {
   r: '#c2d13e',
   c: '#3ea3d1',
   f: '#a8782f'
-}
-
-const apiGet = async ({ query, variables = {} }, prop) => {
-  const res = await apiFetch(apiUrl, JSON.stringify({ query, variables }))
-
-  return res && res.data && res.data[prop]
 }
 
 const metasBuild = (definition, metas) =>
@@ -54,7 +47,7 @@ const metasBuild = (definition, metas) =>
 
 const geojsonsBuild = async (definitions, query, metas) =>
   definitions.reduce(async (geojsons, definition) => {
-    const titres = await apiGet({ query, variables: definition }, 'titres')
+    const titres = await apiGet('titres', { query, variables: definition })
 
     if (!titres || !titres.length) return geojsons
 
@@ -100,14 +93,12 @@ const infosFileCreate = async infos => {
 const run = async () => {
   try {
     // importe les requêtes graphQL
-    const titresQuery = await fileImport(join(__dirname, 'queries/titres.gql'))
-    const domainesQuery = await fileImport(
-      join(__dirname, 'queries/domaines.gql')
-    )
-    const typesQuery = await fileImport(join(__dirname, 'queries/types.gql'))
-    const statutsQuery = await fileImport(
-      join(__dirname, 'queries/statuts.gql')
-    )
+    const {
+      titresQuery,
+      domainesQuery,
+      typesQuery,
+      statutsQuery
+    } = await queries()
 
     // efface le dossier cible et son contenu
     await directoryDelete(join(__dirname, EXPORT_DIRECTORY))
@@ -116,9 +107,9 @@ const run = async () => {
     await directoryCreate(join(__dirname, EXPORT_DIRECTORY))
 
     // récupère les domaines, types et statuts
-    const domaines = await apiGet({ query: domainesQuery }, 'domaines')
-    const types = await apiGet({ query: typesQuery }, 'types')
-    const statuts = await apiGet({ query: statutsQuery }, 'statuts')
+    const domaines = await apiGet('domaines', { query: domainesQuery })
+    const types = await apiGet('types', { query: typesQuery })
+    const statuts = await apiGet('statuts', { query: statutsQuery })
 
     const metas = { types, domaines, statuts }
 
