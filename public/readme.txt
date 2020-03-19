@@ -9,35 +9,25 @@ Support technique
 
 Téléphone : +33 (0)1 40 81 95 86
 Email : camino@beta.gouv.fr
-Github : https://github.com/MTES-MCT/camino-flux
+Code source : https://github.com/MTES-MCT/camino-flux
 
 ---
 
-Les flux géographiques Camino exposent les informations administratives et géographiques pour : 
-- les autorisations et titres miniers valides et faisant l'objet d'une demande de modification en instance,
-- les autorisations de recherches minières échues en Guyane (ARM),
-- les autorisations d'exploitation minières échues en Guyane (AEX),
-- les demandes initiales publiques en cours d'instruction de titres miniers et d'autorisations d’exploitation minière en Guyane (AEX),
-- les demandes d'autorisation de recherches minières classées en Guyane (ARM).
-
-
-Les données sont publiées au format Geojson. C'est un format ouvert et réutilisable qui permet notamment l’utilisation de ces données par des services tiers ou des logiciels de visualisation ou gestion d’information géographique.
+Les flux géographiques Camino exposent les informations administratives et géographiques pour  les autorisations et titres miniers. 
 
 Deux types de flux sont proposés: 
-- des flux statiques mis à jour quotidiennement accessibles à https://flux.camino.beta.gouv.fr
-- des flux dynamiques accessibles à https://flux.camino.beta.gouv.fr/titres permettent de configurer le contenu en fonction de paramètres de requête d'url et offrent un accès avec authentification Basic Auth.
+- des flux statiques mis à jour quotidiennement,
+- des flux dynamiques permettant de configurer le contenu en fonction de paramètres de requête d'url.
 
-Ces flux sont générés via les services de l’API Camino. 
-
-Le code source qui sert à générer les flux est disponible ici : https://github.com/MTES-MCT/camino-flux.
-
-L'API, qui offre des possibilités de requêtes avancées plus souples et complètes, est disponible sur http://api.camino.beta.gouv.fr. 
+Ces flux sont générés via les services de l’API Camino. L'API, qui offre des possibilités de requêtes avancées plus souples et complètes, est disponible sur http://api.camino.beta.gouv.fr. 
 
 ---
 
-Informations disponibles dans les flux géographiques Camino
+Format des données
 
 ---
+
+Les données sont publiées au format Geojson. C'est un format ouvert et réutilisable qui permet notamment l’utilisation de ces données par des services tiers ou des logiciels de visualisation ou gestion d’information géographique.
 
 > Informations administratives
 
@@ -81,9 +71,21 @@ Les périmètres de titres miniers peuvent prendre la forme d’un ou plusieurs 
 
 ---
 
-Utiliser les flux statiques
+Flux statiques
+https://flux.camino.beta.gouv.fr
 
 ---
+
+Flux disponibles: 
+
+- autorisations et titres miniers valides et faisant l'objet d'une demande de modification en instance,
+- autorisations de recherches minières échues en Guyane (ARM),
+- autorisations d'exploitation minières échues en Guyane (AEX),
+- demandes initiales publiques en cours d'instruction de titres miniers et d'autorisations d’exploitation minière en Guyane (AEX),
+- demandes d'autorisation de recherches minières classées en Guyane (ARM).
+
+
+Utiliser les flux statiques: 
 
 > Avec le Géoportail : www.geoportail.gouv.fr
 Bouton clef à molette à droite “Accéder aux outils cartographiques” > “Importer des données” > Format “geojson” > “par url” > copier-coller l’url d’un des flux Camino > ajouter un titre > importer.
@@ -105,12 +107,13 @@ Ils sont disponibles par :
 
 ---
 
-Utiliser les flux dynamiques
+Flux dynamiques
+https://flux.camino.beta.gouv.fr/titres
 
 ---
 
-Basic Auth (à compléter)
-
 Paramètres d'url (à compléter)
+
+Basic Auth (à compléter)
 
 > Avec le Qgis
