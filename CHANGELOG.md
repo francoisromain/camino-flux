@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.10.11](https://github.com/MTES-MCT/camino-flux/compare/v0.10.10...v0.10.11) (2020-03-19)
+
+
+### Features
+
+* crée des flux geojson dynamiques ([#8](https://github.com/MTES-MCT/camino-flux/issues/8)) ([59abf35](https://github.com/MTES-MCT/camino-flux/commit/59abf35720b6b9e0d624b2f4ef16a3f9ff8e772e))
+
+
+### Bug Fixes
+
+* met à jour les appels à l'API ([db1a00e](https://github.com/MTES-MCT/camino-flux/commit/db1a00e74ae38d41a8b6aec8539649ad0b6fde0a))
+
 ### [0.10.10](https://github.com/MTES-MCT/camino-flux/compare/v0.10.9...v0.10.10) (2020-02-12)
 
 
