@@ -1,7 +1,9 @@
 ---
 
+
 Flux géographiques Camino
 https://flux.camino.beta.gouv.fr
+
 
 ---
 
@@ -13,21 +15,25 @@ Code source : https://github.com/MTES-MCT/camino-flux
 
 ---
 
-Les flux géographiques Camino exposent les informations administratives et géographiques pour  les autorisations et titres miniers. 
+Les flux géographiques Camino exposent les informations administratives et géographiques pour les autorisations et titres miniers. 
 
 Deux types de flux sont proposés: 
 - des flux statiques mis à jour quotidiennement,
-- des flux dynamiques permettant de configurer le contenu en fonction de paramètres de requête d'url.
+- des flux dynamiques dont on peut sélectionner le contenu en fonction de paramètres d'url.
 
-Ces flux sont générés via les services de l’API Camino. L'API, qui offre des possibilités de requêtes avancées plus souples et complètes, est disponible sur http://api.camino.beta.gouv.fr. 
+Ces flux sont générés via les services de l’API Camino disponible sur http://api.camino.beta.gouv.fr. L'API offre des possibilités de requêtes avancées plus souples et complètes. 
+
+
 
 ---
+
 
 Format des données
 
+
 ---
 
-Les données sont publiées au format Geojson. C'est un format ouvert et réutilisable qui permet notamment l’utilisation de ces données par des services tiers ou des logiciels de visualisation ou gestion d’information géographique.
+Les données sont publiées au format Geojson. C'est un format ouvert et réutilisable qui permet l’utilisation de ces données par des services tiers ou des logiciels de visualisation ou gestion d’information géographique.
 
 > Informations administratives
 
@@ -67,16 +73,29 @@ Les données sont publiées au format Geojson. C'est un format ouvert et réutil
 
 Plus d’information sur la projection utilisée (WGS84) : http://spatialreference.org/ref/epsg/wgs-84/ 
 
-Les périmètres de titres miniers peuvent prendre la forme d’un ou plusieurs polygones excluant ou non des enclaves. Le type "MultiPolygon" permet de prendre en compte cette diversité de forme.
+Les périmètres de titres miniers peuvent prendre la forme d’un ou plusieurs polygones excluant ou non des enclaves. Le type "MultiPolygon" prend en compte cette diversité de forme.
+
+
 
 ---
+
 
 Flux statiques
 https://flux.camino.beta.gouv.fr
 
+
 ---
 
-Flux disponibles: 
+Les flux statiques disponibles sont listés dans le fichier “infos.json” (https://flux.camino.beta.gouv.fr/geojson/infos.json)
+
+Segmentation par : 
+
+- domaine minier, 
+- type de titre et autorisation, 
+- statut de validité.
+
+
+Détail : 
 
 - autorisations et titres miniers valides et faisant l'objet d'une demande de modification en instance,
 - autorisations de recherches minières échues en Guyane (ARM),
@@ -84,36 +103,52 @@ Flux disponibles:
 - demandes initiales publiques en cours d'instruction de titres miniers et d'autorisations d’exploitation minière en Guyane (AEX),
 - demandes d'autorisation de recherches minières classées en Guyane (ARM).
 
+---
 
-Utiliser les flux statiques: 
+Utiliser les flux statiques
 
-> Avec le Géoportail : www.geoportail.gouv.fr
+> Avec Géoportail (www.geoportail.gouv.fr)
 Bouton clef à molette à droite “Accéder aux outils cartographiques” > “Importer des données” > Format “geojson” > “par url” > copier-coller l’url d’un des flux Camino > ajouter un titre > importer.
 
-> Avec QGIS : http://qgis.org
+> Avec QGIS (http://qgis.org)
 Glisser-déposer l’un des fichiers flux geojson préalablement téléchargé dans un projet Qgis ouvert.
 
-> Avec un webservice tiers : http://geojson.io
+> Avec un webservice tiers (http://geojson.io)
 Copier-coller le contenu d’un des flux dans l’éditeur JSON ou “Open” et sélectionner l’un des flux préalablement téléchargé et ouvrir.
 
-Flux géographiques disponibles :
 
-La liste des flux géographiques de Camino est disponible dans le fichier “infos.json” (https://flux.camino.beta.gouv.fr/geojson/infos.json)
-
-Ils sont disponibles par : 
-- type de domaine minier, 
-- type de titre et autorisation, 
-- type de statut de validité.
 
 ---
+
 
 Flux dynamiques
 https://flux.camino.beta.gouv.fr/titres
 
+
 ---
 
-Paramètres d'url (à compléter)
+Paramètres d'url 
+- domainesIds
+- typesIds
+- statutsIds
+- entreprises
+- noms
+- references
+- substances
+- territoires
 
-Basic Auth (à compléter)
+Basic Auth 
+avec les identifiants utilisateur de Camino
+- email
+- mot de passe
 
-> Avec le Qgis
+Exemples
+- https://email:mdp@flux.camino.beta.gouv.fr/titres?domainesIds=m,s&statutsIds=val
+- …
+
+---
+
+Utiliser les flux dynamiques
+
+> Avec QGIS (http://qgis.org)
+…
