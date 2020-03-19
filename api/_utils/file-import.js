@@ -1,3 +1,3 @@
-const fs = require('fs').promises
+const fs = require('fs')
 
-module.exports = async path => (await fs.readFile(path, 'utf8')).toString()
+module.exports = path => fs.readFileSync(path, 'utf8').toString()

@@ -1,0 +1,11 @@
+mutation Token($email: String!, $motDePasse: String!) {
+  utilisateurTokenCreer(email: $email, motDePasse: $motDePasse) {
+    utilisateur {
+      id
+      email
+      nom
+      prenom
+    }
+    token
+  }
+}

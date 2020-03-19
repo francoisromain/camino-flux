@@ -1,15 +1,16 @@
 const { join } = require('path')
 const fileImport = require('./_utils/file-import')
 
-const queries = async () => {
-  const titresQuery = await fileImport(join(__dirname, 'queries/titres.gql'))
-  const domainesQuery = await fileImport(
-    join(__dirname, 'queries/domaines.gql')
-  )
-  const typesQuery = await fileImport(join(__dirname, 'queries/types.gql'))
-  const statutsQuery = await fileImport(join(__dirname, 'queries/statuts.gql'))
+const titresQuery = fileImport(join(__dirname, 'queries/titres.gql'))
+const domainesQuery = fileImport(join(__dirname, 'queries/domaines.gql'))
+const typesQuery = fileImport(join(__dirname, 'queries/types.gql'))
+const statutsQuery = fileImport(join(__dirname, 'queries/statuts.gql'))
+const tokenQuery = fileImport(join(__dirname, 'queries/token.gql'))
 
-  return { titresQuery, domainesQuery, typesQuery, statutsQuery }
+module.exports = {
+  titresQuery,
+  domainesQuery,
+  typesQuery,
+  statutsQuery,
+  tokenQuery
 }
-
-module.exports = queries

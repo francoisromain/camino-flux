@@ -1,6 +1,10 @@
 # Camino flux
 
-> Flux de données générés quotidiennement à partir de l'API de [Camino](https://camino.beta.gouv.fr): [flux.camino.beta.gouv.fr](https://flux.camino.beta.gouv.fr)
+> Flux de données geojson de l'API de [Camino](https://camino.beta.gouv.fr): [flux.camino.beta.gouv.fr](https://flux.camino.beta.gouv.fr)
+> - flux statiques générés
+> - flux dynamiques 
+> [Usage](https://github.com/MTES-MCT/camino-flux/tree/master/public)
+
 
 ---
 

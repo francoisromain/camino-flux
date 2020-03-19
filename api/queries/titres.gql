@@ -2,15 +2,21 @@ query Titres(
   $typesIds: [ID!]
   $domainesIds: [ID!]
   $statutsIds: [ID!]
-  $substances: String
+  $entreprises: String
   $noms: String
+  $references: String
+  $substances: String
+  $territoires: String
 ) {
   titres(
     typesIds: $typesIds
     domainesIds: $domainesIds
     statutsIds: $statutsIds
-    substances: $substances
+    entreprises: $entreprises
     noms: $noms
+    references: $references
+    substances: $substances
+    territoires: $territoires
   ) {
     ...titre
   }

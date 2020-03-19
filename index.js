@@ -6,6 +6,8 @@ const serveIndex = require('serve-index')
 const port = process.env.NODE_PORT
 const app = express()
 
+const { titresAuth, titresGet } = require('./titres/index')
+
 app.use(compression())
 
 app.use(
@@ -13,6 +15,8 @@ app.use(
   express.static('public'),
   serveIndex('public', { icons: true, view: 'details' })
 )
+
+app.get('/titres', titresAuth, titresGet)
 
 app.listen(port, () => {
   console.log(`Url: http://localhost:${port}`)

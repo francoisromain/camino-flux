@@ -1,6 +1,7 @@
 ---
 
 Flux géographiques Camino
+https://flux.camino.beta.gouv.fr
 
 ---
 
@@ -22,28 +23,15 @@ Les flux géographiques Camino exposent les informations administratives et géo
 
 Les données sont publiées au format Geojson. C'est un format ouvert et réutilisable qui permet notamment l’utilisation de ces données par des services tiers ou des logiciels de visualisation ou gestion d’information géographique.
 
-Ces flux sont mis à jour quotidiennement.
+Deux types de flux sont proposés: 
+- des flux statiques mis à jour quotidiennement accessibles à https://flux.camino.beta.gouv.fr
+- des flux dynamiques accessibles à https://flux.camino.beta.gouv.fr/titres permettent de configurer le contenu en fonction de paramètres de requête d'url et offrent un accès avec authentification Basic Auth.
 
 Ces flux sont générés via les services de l’API Camino. 
 
 Le code source qui sert à générer les flux est disponible ici : https://github.com/MTES-MCT/camino-flux.
 
 L'API, qui offre des possibilités de requêtes avancées plus souples et complètes, est disponible sur http://api.camino.beta.gouv.fr. 
-
----
-
-Comment utiliser les flux géographiques Camino ?
-
----
-
-> Avec le Géoportail : www.geoportail.gouv.fr
-Bouton clef à molette à droite “Accéder aux outils cartographiques” > “Importer des données” > Format “geojson” > “par url” > copier-coller l’url d’un des flux Camino > ajouter un titre > importer.
-
-> Avec QGIS : http://qgis.org
-Glisser-déposer l’un des fichiers flux geojson préalablement téléchargé dans un projet Qgis ouvert.
-
-> Avec un webservice tiers : http://geojson.io
-Copier-coller le contenu d’un des flux dans l’éditeur JSON ou “Open” et sélectionner l’un des flux préalablement téléchargé et ouvrir.
 
 ---
 
@@ -59,7 +47,6 @@ Informations disponibles dans les flux géographiques Camino
         "type": "type de titre",
         "domaine": "type de domaine minier",
         "statut": "statut du titre [demande initiale / valide / modification en instance / demande classée / échu]",
-        "volume": “volume si applicable”,
         "surface": “surface légale indiquée dans l’acte”,
         "substances": “liste des substances légales”,
         "titulaires": “nom du ou des titulaires du titre”,
@@ -94,9 +81,20 @@ Les périmètres de titres miniers peuvent prendre la forme d’un ou plusieurs 
 
 ---
 
-Liste des flux géographiques disponibles.
+Utiliser les flux statiques
 
 ---
+
+> Avec le Géoportail : www.geoportail.gouv.fr
+Bouton clef à molette à droite “Accéder aux outils cartographiques” > “Importer des données” > Format “geojson” > “par url” > copier-coller l’url d’un des flux Camino > ajouter un titre > importer.
+
+> Avec QGIS : http://qgis.org
+Glisser-déposer l’un des fichiers flux geojson préalablement téléchargé dans un projet Qgis ouvert.
+
+> Avec un webservice tiers : http://geojson.io
+Copier-coller le contenu d’un des flux dans l’éditeur JSON ou “Open” et sélectionner l’un des flux préalablement téléchargé et ouvrir.
+
+Flux géographiques disponibles :
 
 La liste des flux géographiques de Camino est disponible dans le fichier “infos.json” (https://flux.camino.beta.gouv.fr/geojson/infos.json)
 
@@ -104,3 +102,15 @@ Ils sont disponibles par :
 - type de domaine minier, 
 - type de titre et autorisation, 
 - type de statut de validité.
+
+---
+
+Utiliser les flux dynamiques
+
+---
+
+Basic Auth (à compléter)
+
+Paramètres d'url (à compléter)
+
+> Avec le Qgis

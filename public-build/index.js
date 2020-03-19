@@ -7,7 +7,12 @@ const { join } = require('path')
 var { job } = require('cron')
 
 const apiGet = require('../api/index')
-const queries = require('../api/queries')
+const {
+  titresQuery,
+  domainesQuery,
+  typesQuery,
+  statutsQuery
+} = require('../api/queries')
 const geojsonFormat = require('../utils/geojson-format')
 
 const fileCreate = require('./_utils/file-create')
@@ -28,22 +33,20 @@ const domainesCouleurs = {
 }
 
 const metasBuild = (definition, metas) =>
-  Object.keys(definition).reduce((metasObj, metaIdsName) => {
-    const metaName = `${metaIdsName.slice(0, -3)}`
+  Object.keys(definition).reduce(
+    (metasObj, metaIdsName) => {
+      const metaName = `${metaIdsName.slice(0, -3)}`
 
-    // TODO: refactoriser pour éviter les effets de bords dans le reduce
-    metasObj[metaName] = []
+      return definition[metaIdsName].reduce((metasObj, metaId) => {
+        const meta = metas[metaName].find(m => m.id === metaId)
 
-    definition[metaIdsName].reduce((metasObj, metaId) => {
-      const meta = metas[metaName].find(m => m.id === metaId)
+        metasObj[metaName].push(meta)
 
-      metasObj[metaName].push(meta)
-
-      return metasObj
-    }, metasObj)
-
-    return metasObj
-  }, {})
+        return metasObj
+      }, metasObj)
+    },
+    { domaines: [], statuts: [], types: [] }
+  )
 
 const geojsonsBuild = async (definitions, query, metas) =>
   definitions.reduce(async (geojsons, definition) => {
@@ -118,14 +121,6 @@ const metasFormat = metas =>
 
 const run = async () => {
   try {
-    // importe les requêtes graphQL
-    const {
-      titresQuery,
-      domainesQuery,
-      typesQuery,
-      statutsQuery
-    } = await queries()
-
     // efface le dossier cible et son contenu
     await directoryDelete(join(__dirname, EXPORT_DIRECTORY))
 
