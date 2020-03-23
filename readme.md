@@ -2,7 +2,7 @@
 
 > Flux de données geojson de l'API de [Camino](https://camino.beta.gouv.fr): [flux.camino.beta.gouv.fr](https://flux.camino.beta.gouv.fr).
 >
-> [Instructions d'usage](https://github.com/MTES-MCT/camino-flux/tree/master/public)
+> [Instructions](https://github.com/MTES-MCT/camino-flux/tree/master/public)
 
 ---
 
@@ -33,7 +33,7 @@ npm install
 # et les enregistre dans le dossier /public/geojson
 npm run build
 
-# Démarre le serveur qui sert les fichiers du dossier /public
+# Démarre le serveur qui sert les fichiers du dossier /public et les flux dynamiques /titres
 npm start
 ```
 
@@ -50,9 +50,3 @@ Voir `contributing.md` (en anglais) pour plus d'infos.
 ### Production
 
 - [La Fabrique Numérique, Ministère de la transition écologique et solidaire](https://www.ecologique-solidaire.gouv.fr/inauguration-fabrique-numerique-lincubateur-des-ministeres-charges-lecologie-et-des-territoires)
-
-#### Équipe
-
-- Guillaume Levieux, intrapreneur
-- Joeffrey Arruyer, coach
-- [François Romain](http://francoisromain.com), développeur
