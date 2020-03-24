@@ -29,6 +29,7 @@ fragment titre on Titre {
     id
     type {
       nom
+      exploitation
     }
   }
   domaine {
